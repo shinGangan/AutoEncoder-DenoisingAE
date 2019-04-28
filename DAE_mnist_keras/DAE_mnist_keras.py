@@ -40,8 +40,8 @@ def model( x_train_noisy, x_train, x_test_noisy, x_test ):
 	
 	autoencoder = Model( input_img, decoded )
 	autoencoder.compile( optimizer='adam',
-						 loss='binary_crossentropy',
-						 metrics=["accuracy"] )
+			     loss='binary_crossentropy',
+			     metrics=["accuracy"] )
 	
 	#  アーキテクチャの可視化
 	autoencoder.summary()	#  ディスプレイ上に表示
@@ -56,11 +56,11 @@ def model( x_train_noisy, x_train, x_test_noisy, x_test ):
 #    							   monitor="val_loss")
 
 	history = autoencoder.fit( x_train_noisy, x_train,
-					   		   epochs=epochs,
-					 		   batch_size=batch_size,
-					 		   shuffle=True,
-					           validation_data=(x_test_noisy,x_test),
-					 		   callbacks=[ tensor_board ] )
+				epochs=epochs,
+				batch_size=batch_size,
+				shuffle=True,
+				validation_data=(x_test_noisy,x_test),
+				callbacks=[ tensor_board ] )
 
 	#  学習のグラフ化
 	plot_history( history, epochs )
