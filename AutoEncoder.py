@@ -37,7 +37,7 @@ decoder = Model(encoded_input, decoder_layer(encoded_input))
 	モデルコンパイル
 """
 autoencoder.compile(optimizer="adadelta",
-					loss="binary_crossentropy")
+		loss="binary_crossentropy")
 					
 """
 	データ読み込み
