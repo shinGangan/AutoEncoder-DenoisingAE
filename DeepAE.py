@@ -52,10 +52,10 @@ epochs = 100
 batch_size = 256
 
 autoencoder.fit( x_train, x_train,
-				 epochs=epochs,
-				 batch_size=batch_size,
-				 shuffle=True,
-				 validation_data=(x_test, x_test))
+		epochs=epochs,
+		batch_size=batch_size,
+		shuffle=True,
+		validation_data=(x_test, x_test))
 				 
 """
 	データの可視化
