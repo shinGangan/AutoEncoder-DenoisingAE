@@ -61,22 +61,19 @@ def model( x_train_noisy, x_train, x_test_noisy, x_test ):
 	autoencoder.summary()	#  ディスプレイ上に表示
 	plot_model( autoencoder, to_file="architecture.png" )
 
-	#	モデルの学習
-#	model.load_weights("./model/AutoEncoder_Cifer10_denoise_weights.{epoch:02d}-{loss:.2f}-{val_loss:/2f}.hdf5")
-	
 	epochs = 200
 	batch_size = 128
 
 	tensor_board = TensorBoard( "./logs", histogram_freq=0, write_graph=True, write_images=True )	
 #	check_point = ModelCheckpoint( filepath="./model/model.{epoch:02d}-{val_loss:.2f}.h5", 
-#   							   monitor="val_loss")
+#   				monitor="val_loss")
 
 	history = autoencoder.fit( x_train_noisy, x_train,
-					  		   epochs=epochs,
-					 		   batch_size=batch_size,
-					  		   shuffle=True,
-					 		   validation_data=(x_test_noisy,x_test),
-					 		   callbacks=[ tensor_board ] )
+				epochs=epochs,
+				batch_size=batch_size,
+				shuffle=True,
+				validation_data=(x_test_noisy,x_test),
+				callbacks=[ tensor_board ] )
 """
 	データの成形、グラフ化
 """
