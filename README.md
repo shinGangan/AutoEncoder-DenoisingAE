@@ -8,7 +8,3 @@ Implementation by keras
 ## Deep AE
 
 ## Denoising AE
-
-## DNCNN
-
-## Win5-RB
